@@ -2,6 +2,7 @@ package rest.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class WarehouseData {
 	
@@ -9,10 +10,22 @@ public class WarehouseData {
 	private String warehouseName;
 	private String timestamp;
 
+    private String warehouseAddress;
+    private String warehousePostalCode;
+    private String warehouseCity;
+    private String warehouseCountry;
+
+    private List<ProductData> products;
 	/**
 	 * Constructor
 	 */
 	public WarehouseData() {
+        this.warehouseAddress = "001";
+        this.warehouseName = "Linz Bhf";
+        this.warehouseAddress = "Bahnhofstrasse 27//9";
+        this.warehousePostalCode = "Linz";
+        this.warehouseCity = "Linz";
+        this.warehouseCountry = "Austria";
 		
 		this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
 
@@ -45,12 +58,28 @@ public class WarehouseData {
 		this.timestamp = timestamp;
 	}
 
+
+    public void setWarehouseAddress(String warehouseAddress) { this.warehouseAddress = warehouseAddress; }
+    public void setWarehousePostalCode(String warehousePostalCode) { this.warehousePostalCode = warehousePostalCode; }
+    public void setWarehouseCity(String warehouseCity) { this.warehouseCity = warehouseCity; }
+    public void setWarehouseCountry(String warehouseCountry) { this.warehouseCountry = warehouseCountry; }
+
+    public String getWarehouseAddress() { return warehouseAddress; }
+    public String getWarehousePostalCode() { return warehousePostalCode; }
+    public String getWarehouseCity() { return warehouseCity; }
+    public String getWarehouseCountry() { return warehouseCountry; }
+
+
+    public List<ProductData> getProducts() {return products; }
+    public void setProducts(List<ProductData> products) {this.products = products;}
+
 	/**
 	 * Methods
 	 */
 	@Override
 	public String toString() {
-		String info = String.format("Warehouse Info: ID = %s, timestamp = %s", warehouseID, timestamp );
+		String info = String.format("Warehouse Info: ID = %s, timestamp = %s", warehouseID, timestamp,warehouseAddress,
+                warehouseName, warehousePostalCode, warehouseCity, warehouseCountry);
 		return info;
 	}
 }
