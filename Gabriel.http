@@ -1,0 +1,26 @@
+### Root page
+GET http://localhost:9090/
+
+### Warehouse JSON (ID 001)
+GET http://localhost:9090/warehouse/001/json
+Accept: application/json
+
+### Warehouse XML (ID 001)
+GET http://localhost:9090/warehouse/001/xml
+Accept: application/xml
+
+### Send to Kafka as JSON (default id=001)
+GET http://localhost:9090/warehouse/send?format=json
+Accept: text/plain
+
+### Send to Kafka as XML (id=001)
+GET http://localhost:9090/warehouse/send?id=001&format=xml
+Accept: text/plain
+
+### Send to Kafka as JSON for another warehouse (id=002)
+GET http://localhost:9090/warehouse/send?id=002&format=json
+Accept: text/plain
+
+### Warehouse table view
+GET http://localhost:9090/warehouse/table
+Accept: text/html
