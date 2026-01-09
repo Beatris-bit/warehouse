@@ -1,20 +1,17 @@
 package rest.warehouse;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import rest.model.WarehouseData;
 
 @Service
 public class WarehouseService {
-	
-	public String getGreetings( String inModule ) {
-        return "Greetings from " + inModule;
-    }
 
-    public WarehouseData getWarehouseData( String inID ) {
-    	
-    	WarehouseSimulation simulation = new WarehouseSimulation();
-        return simulation.getData( inID );
-        
+    @Autowired
+    private WarehouseSimulation simulation;
+
+    public WarehouseData getWarehouseData(String id) {
+        return simulation.getData(id);
     }
-    
 }

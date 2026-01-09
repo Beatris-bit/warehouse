@@ -1,32 +1,25 @@
 package rest.model;
 
 public class ProductData {
-    private String productID;
-    private String productName;
-    private String productCategory;
-    private String productQuantity;
-    private String productUnit;
 
-    public ProductData(String productID, String productName, String productCategory, String productQuantity, String productUnit) {
-        this.productID = productID;
-        this.productName = productName;
-        this.productCategory = productCategory;
-        this.productQuantity = productQuantity;
-        this.productUnit = productUnit;
+    private String id;
+    private String name;
+    private int quantity;
+
+    public ProductData() {}
+
+    public ProductData(String id, String name, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
     }
 
-    public void setProductID(String productID) { this.productID = productID;}
-    public void setProductName(String productName) { this.productName = productName;}
-    public void setProductCategory(String productCategory) { this.productCategory = productCategory;}
-    public void setProductQuantity(String productQuantity) { this.productQuantity = productQuantity;}
-    public void setProductUnit(String productUnit) { this.productUnit = productUnit;}
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getProductID() { return this.productID; }
-    public String getProductName() { return this.productName; }
-    public String getProductCategory() { return this.productCategory; }
-    public String getProductQuantity() { return this.productQuantity; }
-    public String getProductUnit() { return this.productUnit; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-
-
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 }
